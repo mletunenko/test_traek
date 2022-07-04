@@ -1,3 +1,5 @@
+import pytest
+
 from main import piecewise_func
 
 
@@ -40,3 +42,14 @@ def test_get_y_max_border():
 def test_get_y_min_border():
     F = piecewise_func(0, 5)(3, 2)(6, 2)
     assert F.y(-5) == 10
+
+
+def test_get_y_min_border():
+    F = piecewise_func(0, 5)(3, 2)(6, 2)
+    assert F.y(-5) == 10
+
+
+def test_get_y_one_point():
+    F = piecewise_func(0, 5)
+    with pytest.raises(AttributeError):
+        F.y(-5)
