@@ -1,11 +1,19 @@
-class Piecewise_finc:
-    points = []
+# Средняя сложность алгоритма функции y() - (n+1)*log(n)
 
-    def __init__(self, *args):
-        self.points = args
+def piecewise_func(x, y):
+    return Func(x, y)
 
-    def add(self, *args):
-        self.points += args
+
+class Func:
+    def __init__(self, x: int, y: int):
+        self.points = [(x, y)]
+
+    def __call__(self, x, y):
+        self.points.append((x, y))
+        return self
+
+    def add(self, x, y):
+        self.points.append((x, y))
 
     @staticmethod
     def get_koef(p1, p2):
@@ -13,7 +21,6 @@ class Piecewise_finc:
             a = (p1[1] - p2[1]) / (p1[0] - p2[0])
         except ZeroDivisionError:
             return 0, p1[0]
-
         b = p1[1] - a * p1[0]
         return a, b
 
