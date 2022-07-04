@@ -17,17 +17,21 @@ def test_add_one_point():
     F = F(10, 122)
     assert F.points == [(0, 100), (10, 122)]
 
+
 def test_get_y():
     F = piecewise_func(0, 100)(10, 122)
-    assert F.y(5)  == 111
+    assert F.y(5) == 111
+
 
 def test_get_y_inf():
     F = piecewise_func(0, 100)(0, 0)
-    assert F.y(0)  == 'Y is infinite'
+    assert F.y(0) == 'Y is infinite'
+
 
 def test_get_y_not_exist():
     F = piecewise_func(0, 100)(0, 0)
-    assert F.y(5)  == 'Function does not exist'
+    assert F.y(5) == 'Function does not exist'
+
 
 def test_get_y_max_border():
     F = piecewise_func(0, 5)(3, 2)(6, 2)
