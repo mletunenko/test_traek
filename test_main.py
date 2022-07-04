@@ -1,5 +1,4 @@
 from main import piecewise_func
-from main import Func
 
 
 def test_create_func_one_point():

@@ -12,9 +12,6 @@ class Func:
         self.points.append((x, y))
         return self
 
-    def add(self, x, y):
-        self.points.append((x, y))
-
     @staticmethod
     def get_koef(p1, p2):
         try:
