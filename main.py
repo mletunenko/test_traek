@@ -36,10 +36,13 @@ class Func:
                     a, b = self.get_koef(self.points[i], self.points[i - 1])
                     break
         if not a:
-            if x == b:
-                return ('Y is infinite')
+            if b:
+                return b
             else:
-                return ('Function does not exist')
+                if x == b:
+                    return ('Y is infinite')
+                else:
+                    return ('Function does not exist')
         return a * x + b
 
     def table(self):
